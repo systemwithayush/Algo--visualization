@@ -1,0 +1,20 @@
+# Node files
+node_modules/
+dist/
+build/
+.env
+
+# Python files
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
