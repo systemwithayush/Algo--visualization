@@ -1,6 +1,12 @@
 # AlgoLabs - Interactive DSA Learning Laboratory
 
+![AlgoLabs Dashboard](media/landing_page.png)
+
 AlgoLabs is an interactive platform designed to help students and developers master Data Structures and Algorithms (DSA) through step-by-step visual animations, complexity analysis, and a live code sandbox.
+
+## 🎥 Demo Video
+
+![AlgoLabs Demo](media/demo.webp)
 
 ## 🚀 Features
 
