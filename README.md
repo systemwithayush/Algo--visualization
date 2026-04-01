@@ -7,6 +7,7 @@ AlgoLabs is an interactive, complete DSA EdTech platform designed to help studen
 ## 🚀 Key Features
 
 - **Complete DSA Curriculum**: Structured learning modules covering Arrays, Linked Lists, Stacks, Queues, Sorting, Searching, Trees, and Graphs.
+- **Interactive Playground**: Here user can write scrips and it will run simultaneously showing errors, or provide the output or the script concurrently in the split window.
 - **Dual-Pane Learning**: Watch curated YouTube lectures, while simultaneously interacting with the real-time visualizer.
 - **Step-by-Step Code Tracker**: The dynamic "Logic View" highlights exactly what lines of code are executing, alongside an explanation of the logical step.
 - **AI Learning Assistant**: Integrated chat panel using the Gemini API. Ask the assistant to re-explain a complex concept or trace an iteration.
@@ -60,11 +61,6 @@ npm run dev
 
 Navigate to `http://localhost:5173` to explore the dashboard.
 
-## 👥 Meet the Developers
-
-*   **Ayush**: Frontend & Algorithm Interactivity (LinkedIn)
-*   **Divya**: Backend, Cloudflare & Database (LinkedIn)
-
 ## 🤝 Open Contribution
 
 AlgoLabs welcomes the developer community! If you wish to improve a visualization, trace new algorithms, or write better theory explanations:
@@ -84,3 +80,9 @@ This project is open-source. For cloud deployment:
 3.  Add `GEMINI_API_KEY` to the Cloudflare Worker Secrets.
 4.  Deploy `backend-cf` using `wrangler deploy`.
 5.  Deploy the frontend build folder `dist` to Cloudflare Pages mapping the API base URL.
+
+## Developers 
+1. **Ayush Kumar** - Backend (Cloudflare and Workers), API Integration & DevOps 
+                     LinkedIn- https://www.linkedin.com/in/ayush-kumar-3542a7352/
+2. **Divya Rao** - Frontend & Algorithm interactivity
+                     LinkedIn- https://www.linkedin.com/in/divya-rao-975a3b32a/
