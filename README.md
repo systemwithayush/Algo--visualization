@@ -7,7 +7,7 @@ AlgoLabs is an interactive, complete DSA EdTech platform designed to help studen
 ## 🚀 Key Features
 
 - **Complete DSA Curriculum**: Structured learning modules covering Arrays, Linked Lists, Stacks, Queues, Sorting, Searching, Trees, and Graphs.
-- **Interactive Playground**: Here user can write scrips and it will run simultaneously showing errors, or provide the output or the script concurrently in the split window.
+- **Interactive Playground**: Here user can write scripts and it will run simultaneously showing errors, or provide the output or the script concurrently in the split window.
 - **Dual-Pane Learning**: Watch curated YouTube lectures, while simultaneously interacting with the real-time visualizer.
 - **Step-by-Step Code Tracker**: The dynamic "Logic View" highlights exactly what lines of code are executing, alongside an explanation of the logical step.
 - **AI Learning Assistant**: Integrated chat panel using the Gemini API. Ask the assistant to re-explain a complex concept or trace an iteration.
