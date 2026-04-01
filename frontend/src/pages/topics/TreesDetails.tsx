@@ -1,14 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import TreeVisualizer from '../../components/visualization/TreeVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is a Tree Data Structure?", answer: "A non-linear, hierarchical data structure consisting of nodes connected by edges." },
-  { question: "What is a Binary Search Tree (BST)?", answer: "A tree where each node has at most 2 children. The left child is smaller, and the right child is larger than the parent node." },
-  { question: "What are the rules of Inorder Traversal?", answer: "Left Subtree -> Root Node -> Right Subtree. (In a BST, this prints elements in sorted order!)." },
-  { question: "Time complexity to search an element in a balanced BST?", answer: "O(log n). The height of the tree dictates the worst-case search path." }
-];
+const treeCards = flashcardsData.filter(card => card.topicId === 'trees');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -79,9 +75,14 @@ const TreesDetails = () => {
       description="Hierarchical non-linear data structures representing relationships mapping."
       videoId="qH6yxkw0u78" // Abdul Bari Trees
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <TreeVisualizer />
+      <div className="space-y-12">
+        <TreeVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={treeCards} title="Trees Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };

@@ -1,14 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import SearchingVisualizer from '../../components/visualization/SearchingVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is Linear Search?", answer: "An algorithm that checks every item in the sequential array until the target element is found." },
-  { question: "What is the worst-case time complexity of Linear Search?", answer: "O(n). This occurs if the target is the very last element, or not in the array at all." },
-  { question: "What is the primary condition for Binary Search to work?", answer: "The array/list MUST be sorted." },
-  { question: "How does Binary Search work?", answer: "It repeatedly divides the search interval in half. If the target is less than the middle element, it searches the left half, otherwise the right half." }
-];
+const searchingCards = flashcardsData.filter(card => card.topicId === 'searching');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -71,9 +67,14 @@ const SearchingDetails = () => {
       description="Learn algorithms designed to check for an element or retrieve it from any data structure where it is stored."
       videoId="V_T5NuccwPI" // Abdul Bari Binary Search
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <SearchingVisualizer />
+      <div className="space-y-12">
+        <SearchingVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={searchingCards} title="Searching Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };

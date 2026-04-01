@@ -1,14 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import GraphVisualizer from '../../components/visualization/GraphVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is a Graph Data Structure?", answer: "A non-linear data structure consisting of nodes (vertices) and edges that connect them." },
-  { question: "What is the difference between Directed and Undirected graphs?", answer: "In a directed graph, edges have a specific direction (A to B). In undirected, edges imply a 2-way relationship (A <-> B)." },
-  { question: "What is BFS used for?", answer: "Breadth-First Search traverses level by level. Ideal for finding the shortest path in an unweighted graph." },
-  { question: "What is an Adjacency Matrix?", answer: "A 2D array of size V x V where matrix[i][j]=1 indicates an edge between vertex i and vertex j." }
-];
+const graphCards = flashcardsData.filter(card => card.topicId === 'graphs');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -74,9 +70,14 @@ const GraphsDetails = () => {
       description="Study network topologies, pathfinding, and vertex/edge relationships."
       videoId="pcKY4hjDrxk" // Abdul Bari Graphs
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <GraphVisualizer />
+      <div className="space-y-12">
+        <GraphVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={graphCards} title="Graphs Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };

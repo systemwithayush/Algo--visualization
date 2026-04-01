@@ -15,6 +15,9 @@ import LinkedListsDetails from './pages/topics/LinkedListsDetails';
 import StacksQueuesDetails from './pages/topics/StacksQueuesDetails';
 import TreesDetails from './pages/topics/TreesDetails';
 import GraphsDetails from './pages/topics/GraphsDetails';
+import HTMLDetails from './pages/topics/HTMLDetails';
+import CSSDetails from './pages/topics/CSSDetails';
+import JSDetails from './pages/topics/JSDetails';
 
 function App() {
   return (
@@ -30,6 +33,11 @@ function App() {
         <Route path="/topic/stack-queue" element={<StacksQueuesDetails />} />
         <Route path="/topic/trees" element={<TreesDetails />} />
         <Route path="/topic/graphs" element={<GraphsDetails />} />
+
+        {/* Web Development Topics */}
+        <Route path="/topic/html" element={<HTMLDetails />} />
+        <Route path="/topic/css" element={<CSSDetails />} />
+        <Route path="/topic/js" element={<JSDetails />} />
 
         {/* Global Pages */}
         <Route path="/developers" element={<Developers />} />

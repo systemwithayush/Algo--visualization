@@ -1,14 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import LinkedListVisualizer from '../../components/visualization/LinkedListVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is a Linked List?", answer: "A linear data structure where elements are not stored in contiguous memory, but instead linked using pointers." },
-  { question: "What is the time complexity to insert a node at the head?", answer: "O(1) - You only need to update the new node's pointer and the head reference." },
-  { question: "What is the primary disadvantage of Linked Lists vs Arrays?", answer: "No random access. To reach the nth element, you must traverse O(n) nodes. Also, extra memory is required for pointers." },
-  { question: "What is a Doubly Linked List?", answer: "A list where each node contains pointers to both the next node AND the previous node." }
-];
+const llCards = flashcardsData.filter(card => card.topicId === 'linked-list');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -67,20 +63,25 @@ const theoryContent = (
     </div>
   </div>
 );
-
 const LinkedListsDetails = () => {
   return (
     <TopicLayout
       topicId="linked-list"
       title="Linked Lists"
       description="Understand dynamic memory allocations, nodes, and pointers replacing contiguous arrays."
-      videoId="D2vI2PNMrZA" // Jenny's Lectures Linked list
+      videoId="q8gdBn9RPeI" // CodeHelp Linked List 1
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <LinkedListVisualizer />
+      <div className="space-y-12">
+        <LinkedListVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={llCards} title="Linked List Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };
 
 export default LinkedListsDetails;
+

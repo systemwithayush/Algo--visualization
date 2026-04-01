@@ -65,3 +65,17 @@
 .visualizer-bar {
   transition: transform 0.2s ease, background-color 0.2s ease, height 0.2s ease;
 }
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+

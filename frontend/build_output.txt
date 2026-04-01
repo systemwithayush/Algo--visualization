@@ -1,0 +1,56 @@
+
+> frontend@0.0.0 build
+> tsc && vite build
+
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/ai/GenAIAssistant.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/feedback/FeedbackForm.tsx(2,10): error TS6133: 'Share2' is declared but its value is never read.
+src/components/layout/AppLayout.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/layout/Sidebar.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/layout/TopNav.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Sidebar.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,18): error TS6133: 'Hash' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,24): error TS6133: 'Plus' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,30): error TS6133: 'Grid' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,36): error TS6133: 'ListEnd' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,71): error TS6133: 'Play' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,77): error TS6133: 'Pause' is declared but its value is never read.
+src/components/visualization/ArrayVisualizer.tsx(3,84): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/visualization/Bar.tsx(1,17): error TS6133: 'useState' is declared but its value is never read.
+src/components/visualization/Bar.tsx(1,27): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/visualization/Bar.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/visualization/CodeLogicPanel.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/CodeSandbox.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/GraphVisualizer.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/visualization/GraphVisualizer.tsx(3,10): error TS6133: 'Plus' is declared but its value is never read.
+src/components/visualization/GraphVisualizer.tsx(298,29): error TS6133: 'idx' is declared but its value is never read.
+src/components/visualization/PerformanceDashboard.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/SearchingVisualizer.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/SearchingVisualizer.tsx(3,27): error TS6133: 'SearchIcon' is declared but its value is never read.
+src/components/visualization/SearchingVisualizer.tsx(13,17): error TS6133: 'setSpeed' is declared but its value is never read.
+src/components/visualization/SortingVisualizer.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/StackQueueVisualizer.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/TreeVisualizer.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/visualization/TreeVisualizer.tsx(3,24): error TS6133: 'Search' is declared but its value is never read.
+src/components/workspace/DSAWorkspace.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/workspace/WebWorkspace.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/workspace/WebWorkspace.tsx(4,10): error TS6133: 'Play' is declared but its value is never read.
+src/components/workspace/WebWorkspace.tsx(4,27): error TS6133: 'AlertTriangle' is declared but its value is never read.
+src/pages/AdminFeedback.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Dashboard.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Dashboard.tsx(5,36): error TS6133: 'Database' is declared but its value is never read.
+src/pages/Developers.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/PlaygroundDSA.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/PlaygroundWeb.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/ArraysDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/CSSDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/GraphsDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/HTMLDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/JSDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/LinkedListsDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/SearchingDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/SortingDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/StacksQueuesDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/topics/TreesDetails.tsx(1,1): error TS6133: 'React' is declared but its value is never read.

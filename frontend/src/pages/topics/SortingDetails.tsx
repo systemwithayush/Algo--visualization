@@ -1,14 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import SortingVisualizer from '../../components/visualization/SortingVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is Bubble Sort?", answer: "A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order." },
-  { question: "Time complexity of Bubble and Selection Sort?", answer: "O(n²). These algorithms require nested loops over the array." },
-  { question: "What is Merge Sort?", answer: "A Divide and Conquer algorithm that splits an array in half, sorts the halves, and merges them back together." },
-  { question: "What is the best average case sorting time complexity?", answer: "O(n log n). Seen in Merge Sort, Quick Sort, and Heap Sort." }
-];
+const sortingCards = flashcardsData.filter(card => card.topicId === 'sorting');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -75,9 +71,14 @@ const SortingDetails = () => {
       description="Visualize and analyze various algorithmic sorting techniques."
       videoId="pkkFqlG0Hds" // Abdul Bari Sorting Intro
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <SortingVisualizer />
+      <div className="space-y-12">
+        <SortingVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={sortingCards} title="Sorting Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };

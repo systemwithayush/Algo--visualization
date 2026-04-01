@@ -1,15 +1,10 @@
 import React from 'react';
 import TopicLayout from '../../components/course/TopicLayout';
 import StackQueueVisualizer from '../../components/visualization/StackQueueVisualizer';
-import { FlashcardData } from '../../components/course/FlashcardSystem';
+import FlashcardDeck from '../../components/learning/FlashcardDeck';
+import { flashcardsData } from '../../data/flashcards';
 
-const flashcards: FlashcardData[] = [
-  { question: "What is the acronym describing a Stack?", answer: "LIFO (Last In, First Out). The last element added is the first one to be removed." },
-  { question: "What is the acronym describing a Queue?", answer: "FIFO (First In, First Out). The first element added is the first one to be removed." },
-  { question: "What are the primary Stack operations?", answer: "Push (add element to top) and Pop (remove element from top)." },
-  { question: "What are the primary Queue operations?", answer: "Enqueue (add to rear) and Dequeue (remove from front)." },
-  { question: "Time complexity of Push and Pop in a Stack?", answer: "O(1) because both operations happen strictly at the top of the stack." }
-];
+const sqCards = flashcardsData.filter(card => card.topicId === 'stack-queue');
 
 const theoryContent = (
   <div className="space-y-6">
@@ -83,9 +78,14 @@ const StacksQueuesDetails = () => {
       description="Understand constraint-based linear data storage utilizing LIFO and FIFO architecture."
       videoId="I37kOm-X2Hk" // Abdul Bari Stack/Queue
       theoryContent={theoryContent}
-      flashcards={flashcards}
     >
-      <StackQueueVisualizer />
+      <div className="space-y-12">
+        <StackQueueVisualizer />
+        
+        <div className="border-t border-glass-border pt-8 w-full max-w-4xl mx-auto">
+          <FlashcardDeck cards={sqCards} title="Stacks & Queues Review" />
+        </div>
+      </div>
     </TopicLayout>
   );
 };

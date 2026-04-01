@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import FeedbackForm from '../feedback/FeedbackForm';
 import { useProgress } from '../../context/ProgressContext';
 import { CheckCircle, PlaySquare, Code, BookOpen } from 'lucide-react';
-import FlashcardSystem, { FlashcardData } from './FlashcardSystem';
-
 interface TopicLayoutProps {
   topicId: string;
   title: string;
@@ -11,10 +9,9 @@ interface TopicLayoutProps {
   videoId: string;
   theoryContent: React.ReactNode;
   children: React.ReactNode; // The visualizer
-  flashcards?: FlashcardData[];
 }
 
-const TopicLayout = ({ topicId, title, description, videoId, theoryContent, children, flashcards }: TopicLayoutProps) => {
+const TopicLayout = ({ topicId, title, description, videoId, theoryContent, children }: TopicLayoutProps) => {
   const { markTopicComplete, setRecentTopic, completedTopics } = useProgress();
   const isCompleted = completedTopics.includes(topicId);
 
@@ -89,10 +86,6 @@ const TopicLayout = ({ topicId, title, description, videoId, theoryContent, chil
         </div>
       </div>
 
-      {/* Flashcards Section */}
-      {flashcards && flashcards.length > 0 && (
-        <FlashcardSystem cards={flashcards} />
-      )}
 
       {/* Feedback Form */}
       <FeedbackForm topicId={title} />
