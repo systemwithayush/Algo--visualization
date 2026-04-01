@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS feedbacks;
+CREATE TABLE feedbacks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  topic TEXT NOT NULL,
+  name TEXT,
+  feedback TEXT NOT NULL,
+  suggestion TEXT,
+  rating INTEGER NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
+import { ThemeProvider } from './context/ThemeContext.tsx'
+import { ProgressProvider } from './context/ProgressContext.tsx'
 import './index.css'
 
 // @ts-ignore
@@ -8,6 +11,12 @@ window.process = { env: {} };
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ThemeProvider>
+        <ProgressProvider>
+          <App />
+        </ProgressProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 )

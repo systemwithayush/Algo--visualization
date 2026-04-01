@@ -1,0 +1,25 @@
+.gutter {
+  background-color: var(--glass-border);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: background-color 0.2s ease;
+  z-index: 50;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="30" viewBox="0 0 10 30"><path d="M4 5h2v20H4zm0 0" fill="%23ffffff" opacity="0.3"/></svg>');
+  cursor: col-resize;
+  border-left: 1px solid var(--glass-bg);
+  border-right: 1px solid var(--glass-bg);
+}
+
+.gutter.gutter-vertical {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 30 10"><path d="M5 4v2h20V4zm0 0" fill="%23ffffff" opacity="0.3"/></svg>');
+  cursor: row-resize;
+  border-top: 1px solid var(--glass-bg);
+  border-bottom: 1px solid var(--glass-bg);
+}
+
+.gutter:hover, .gutter:active {
+  background-color: var(--accent-primary);
+}

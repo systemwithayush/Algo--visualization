@@ -2,74 +2,85 @@
 
 ![AlgoLabs Dashboard](media/landing_page.png)
 
-AlgoLabs is an interactive platform designed to help students and developers master Data Structures and Algorithms (DSA) through step-by-step visual animations, complexity analysis, and a live code sandbox.
+AlgoLabs is an interactive, complete DSA EdTech platform designed to help students and developers master Data Structures and Algorithms through a structured curriculum, embedded video lectures, step-by-step logic visual animations, and an AI assistant powered by Gemini.
 
-## 🎥 Demo Video
+## 🚀 Key Features
 
-![AlgoLabs Demo](media/demo.webp)
+- **Complete DSA Curriculum**: Structured learning modules covering Arrays, Linked Lists, Stacks, Queues, Sorting, Searching, Trees, and Graphs.
+- **Dual-Pane Learning**: Watch curated YouTube lectures, while simultaneously interacting with the real-time visualizer.
+- **Step-by-Step Code Tracker**: The dynamic "Logic View" highlights exactly what lines of code are executing, alongside an explanation of the logical step.
+- **AI Learning Assistant**: Integrated chat panel using the Gemini API. Ask the assistant to re-explain a complex concept or trace an iteration.
+- **Feedback Mechanism**: Embedded feedback forms backed by a secure Cloudflare D1 database.
+- **Premium User Experience**: Glassmorphism UI, Dark Mode support, and fluid Framer Motion animations.
 
-## 🚀 Features
+## 🛠️ Technology Stack
 
-- **Sorting Algorithms**: Visualize how algorithms like Bubble Sort, Merge Sort, Quick Sort, and Heap Sort organize data.
-- **Searching Algorithms**: Interactive tracing of Linear Search and Binary Search.
-- **Data Structures**: Real-time manipulation of Arrays, Singly Linked Lists, Stacks, and Queues.
-- **Trees**: Explore Binary Search Tree (BST) insertions, deletions, and various traversal methods.
-- **Graphs**: Create interactive graphs and visualize traversal algorithms like BFS and DFS.
-- **Algorithm Sandbox**: A built-in code editor (powered by Monaco) to write, test, and run your own algorithms in-browser.
-- **Performance Benchmarks**: Compare time and space complexities visually with data-driven charts.
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React** with **TypeScript**
-- **Vite** for fast development and building
+### Frontend Architecture
+- **React 18** and **TypeScript** (Vite Scaffold)
+- **Tailwind CSS v4** for utility-first styling with premium CSS variables
+- **React Router v6** for course module navigation
+- **Framer Motion** for spring physics and layout animations
 - **Lucide React** for modern iconography
-- **Framer Motion** for smooth, fluid animations
-- **Chart.js** & **React-Chartjs-2** for performance metrics
-- **D3.js** for complex data visualizations
-- **Monaco Editor** for the integrated code sandbox
 
-### Backend
-- **FastAPI** (Python) for a lightweight and high-performance API.
+### Backend (Cloudflare Edge Architecture)
+- **Cloudflare Workers** utilizing **Hono.js** framework
+- **Cloudflare D1** (Serverless SQLite DB) for Feedback Storage
+- **Gemini API Proxy** to securely mask secrets while providing AI capabilities
 
-## 📦 Getting Started
+## 📦 Local Setup & Execution
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- Python 3.8+
+- Node.js (v18+)
+- NPM or PNPM
+- `wrangler` CLI installed globally
 
-### Installation
+### 1. Backend Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/systemwithayush/Algo--visualization.git
-   cd Algo--visualization
-   ```
+```bash
+cd backend-cf
+npm install
 
-2. **Frontend Setup:**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
+# Initialize local SQLite for D1 database
+npm run db:init
 
-3. **Backend Setup:**
-   ```bash
-   cd ../backend
-   # It is recommended to use a virtual environment
-   python -m venv venv
-   source venv/bin/activate # On Windows use `venv\Scripts\activate`
-   pip install fastapi uvicorn
-   uvicorn main:app --reload
-   ```
+# Start the Cloudflare Worker server locally (Port 8787)
+npm run dev
+```
 
-## 🧪 Usage
+### 2. Frontend Setup
 
-Once both servers are running:
-- Open your browser and navigate to `http://localhost:5173` (or the port specified by Vite).
-- Use the sidebar to switch between different visualization modules.
-- Interact with the visualizers using the control panels provided in each section.
+In a new terminal window:
+```bash
+cd frontend
+npm install
 
-## 📄 License
+# Start the Vite React compiler (Port 5173)
+npm run dev
+```
 
-This project is open-source and available under the MIT License.
+Navigate to `http://localhost:5173` to explore the dashboard.
+
+## 👥 Meet the Developers
+
+*   **Ayush**: Frontend & Algorithm Interactivity (LinkedIn)
+*   **Divya**: Backend, Cloudflare & Database (LinkedIn)
+
+## 🤝 Open Contribution
+
+AlgoLabs welcomes the developer community! If you wish to improve a visualization, trace new algorithms, or write better theory explanations:
+
+1.  Fork the repository.
+2.  Install all dependencies and ensure local D1 works.
+3.  Commit your features or bugfixes.
+4.  Open a Pull Request.
+
+> See the Feedback Admin Panel locally: `http://localhost:5173/admin/feedback`.
+
+## 📄 License & Deployment
+
+This project is open-source. For cloud deployment:
+1.  Connect Cloudflare with your GitHub Repo.
+2.  Create a remote D1 database named `algolabs-db` and update `wrangler.toml`.
+3.  Add `GEMINI_API_KEY` to the Cloudflare Worker Secrets.
+4.  Deploy `backend-cf` using `wrangler deploy`.
+5.  Deploy the frontend build folder `dist` to Cloudflare Pages mapping the API base URL.
